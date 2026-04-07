@@ -47,12 +47,10 @@ app.delete('/api/todos/:id', async (req, res) => {
   res.json({ message: '삭제 완료' });
 });
 
-// ⭐ 중요 (Vercel용)
+// ⭐ Vercel용 export (딱 한 번만!)
 module.exports = app;
 
 // ⭐ 로컬 실행용
 if (process.env.NODE_ENV !== 'production') {
   app.listen(5000, () => console.log('localhost:5000 실행'));
 }
-
-module.exports = app;
